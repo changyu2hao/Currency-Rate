@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .panel-body {
+            height: calc(100% - 40px);
+            display: flex;
+            align-items: center;
+        }
+
+        .form-horizontal {
+            padding: 40px;
+            border: 1px solid #ddd;
+            width: 50%;
+            margin-left: 25%;
+            border-radius: 8px;
+        }
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body style="padding: 40px;">
+<div id="app" v-cloak class="panel panel-primary" style="width: 100%; height: 100%;">
+    <div class="panel-heading">
+        <h1 class="panel-title">Currency conversion</h1>
+    </div>
+
+    <div class="alert alert-danger alert-dismissable hide" role="alert">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+       </button>
+       <strong>{{ error_text }}</strong>
+   </div>
+
+    <div class="panel-body">
+        <div class="form-horizontal row" id="form">
+            <div class="form-group">
+                <label class="col-sm-7 control-label">Please input canadian dollars</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control"  v-model="form.number"  placeholder="Input the amount">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-7 control-label">Choose the currenct to transfer</label>
+                <div class="col-sm-5">
+                    <select class="form-control" v-model="form.type">
+                          <option>CNY</option>
+                          <option>USD</option>
+                          <option>GBP</option>
+                          <option>EUR</option>
+                          <option>JPY</option>
+                          <option>BRL</option>
+                          <option>VND</option>
+
+                          <!--<option>RMB(人民币)</option>-->
+                          <!--<option>USD(美元)</option>-->
+                          <!--<option>GBP(英镑)</option>-->
+                          <!--<option>EUR(欧元)</option>-->
+                          <!--<option>JPY(欧元)</option>-->
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-7 control-label">It is equal to:</label>
+                <div class="col-sm-5">
+                    <input type="input" class="form-control"  v-model="backdata" >
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary pull-right" style="margin-right: 15px;" @click="trans">trans</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script src="./js/jq.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/common.js"></script>
+
+
+<script type="text/javascript">
+    $('document').ready(function () {
+        initVue();
+    });
+</script>
+<script>
+    function initVue() {
+        vm = new Vue({
+            el: '#app',
+            data: {
+                form:{
+                    number:"",
+                    type: ""
+                },
+                error_text:"",
+                backdata:''
+            },
+            watch: {},
+            computed: {},
+            mounted: function () {
+
+            },
+            methods: {
+                //获取资讯详细
+                trans() {
+                    window.setTimeout(function(){
+                        $('.alert-danger').removeClass('in').addClass('hide')
+                    },2000);
+                    if(!this.form.number || !this.form.type){
+                        this.error_text = "form shouldn't be empty";
+                        $('.alert-danger').removeClass('hide').addClass('in');
+                        return;
+                    }
+
+                    apiAjax(APIURL.get_trans+"?number="+this.form.number + "&type=" +this.form.type, 'GET', {}, (ret, err) => {
+                        // window.location.href="./index/index.html" +"?name=" + this.form.name
+                        this.backdata = ret.data;
+                    })
+                }
+            }
+        })
+    }
+</script>
+</html>
