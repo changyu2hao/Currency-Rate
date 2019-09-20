@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 import requests
 
-# log in
+# 登录
 def get_trans(request):
     number = request.GET.get('number')
     type = request.GET.get('type')
@@ -45,9 +45,6 @@ def get_trans(request):
     pricevnd = round((float(data_first.json()["rates"]["VND"])), 2)
     price_cad_to_vnd = pricevnd / pricecanada
 
-    pricesgd = round((float(data_first.json()["rates"]["SGD"])), 2)
-    price_cad_to_sin = pricesgd/pricecanada
-
 
     back = ''
     if type == 'CNY':
@@ -64,8 +61,6 @@ def get_trans(request):
         back = int(number) * price_cad_to_brl
     elif type == 'VND':
         back = int(number) * price_cad_to_vnd
-    elif type == 'SGD':
-        back = int(number)*price_cad_to_sin
     # print(data_last.json())
 
     return HttpResponse(json.dumps({"code": 1, "data": back}, ensure_ascii=False))
