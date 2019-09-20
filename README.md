@@ -7,7 +7,7 @@
 
 #### Step2: Choose the type of currency you want to convert to.
 
-![Screenshot (113)](https://user-images.githubusercontent.com/43207918/65353852-1b4ee280-dbbc-11e9-8463-39b2ea5394a5.png)
+![Screenshot (115)](https://user-images.githubusercontent.com/43207918/65354946-c95b8c00-dbbe-11e9-8329-84b287a41889.png)
 
 #### Step3: Click "trans" button to easily view the results.
 
