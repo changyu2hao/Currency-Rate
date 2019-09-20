@@ -3,7 +3,7 @@
 
 #### Step1: Input the amount of Canadian Dollars you want to convert in the first input box.
 
-![Screenshot (93)](https://user-images.githubusercontent.com/43207918/65003410-661fe000-d8c6-11e9-9d51-891f1ff72c5e.png)
+![Screenshot (112)](https://user-images.githubusercontent.com/43207918/65353737-de82eb80-dbbb-11e9-8d66-c6941c858867.png)
 
 #### Step2: Choose the type of currency you want to convert to.
 
