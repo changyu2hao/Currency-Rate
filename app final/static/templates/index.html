@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
         html, body {
             height: 100%;
@@ -42,6 +43,11 @@
 
     <div class="panel-body">
         <div class="form-horizontal row" id="form">
+            <i class="fas fa-dollar-sign fa-3x" style="color: gold"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-pound-sign fa-3x" style="color: #eb8034"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-yen-sign fa-3x" style="color: #1b14e3"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-euro-sign fa-3x" style="color: #2265a8"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-fish fa-3x" style="color: #e89827"></i>
             <div class="form-group">
                 <label class="col-sm-7 control-label">Please input Canadian Dollars</label>
                 <div class="col-sm-5">
@@ -76,7 +82,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-primary pull-right" style="margin-right: 15px;" @click="trans">trans</button>
+                <button type="button" class="btn btn-primary pull-right" style="margin-right: 15px;" @click="trans">Convert</button>
             </div>
         </div>
     </div>
