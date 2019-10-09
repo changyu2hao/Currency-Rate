@@ -11,5 +11,5 @@
 
 #### Step3: Click "Convert" button to easily view the results.
 
-![Screenshot (94)](https://user-images.githubusercontent.com/43207918/65003606-36bda300-d8c7-11e9-8405-2819d18e5d45.png)
+![Screenshot (125)](https://user-images.githubusercontent.com/43207918/66447280-ef38bb80-ea1b-11e9-9e19-1031a60a5383.png)
 
