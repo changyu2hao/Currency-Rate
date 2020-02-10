@@ -1,5 +1,9 @@
 # Real-Time Currency-Rate
-### This APP will help to convert Canadian Dollars to another currency.
+# Inspiration
+Currency Converter(https://www.google.com/search?q=currency+converter&rlz=1C1CHBF_enCA839CA839&oq=Currency+Conver&aqs=chrome.1.69i57j0l7.9419j1j8&sourceid=chrome&ie=UTF-8)
+
+# What it does
+This tool will help to convert Canadian Dollars to another currency.
 
 #### Step1: Input the amount of Canadian Dollars you want to convert in the first input box.
 
